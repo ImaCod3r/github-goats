@@ -142,3 +142,7 @@ td.user img {
     object-fit: cover;
     border-radius: 50%;
 }
+
+.remove-button {
+    cursor: pointer;
+}
