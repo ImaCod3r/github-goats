@@ -19,13 +19,13 @@ export class Goats {
 
             const userExists = this.data.find(entry => entry.login === username);
 
-            if(userExists) {
+            if (userExists) {
                 throw new Error('User already exists');
             }
 
-            const user = await Githubuser.search(username); 
-            
-            if(user.login === undefined) {
+            const user = await Githubuser.search(username);
+
+            if (user.login === undefined) {
                 throw new Error('Usuario nao encontrado')
             }
 
@@ -33,7 +33,7 @@ export class Goats {
             this.update();
             this.save();
 
-        } catch(error) {
+        } catch (error) {
             alert(error.message);
         }
     }
@@ -53,7 +53,7 @@ export class GoatsView extends Goats {
         this.onadd();
     }
 
-    onadd(){
+    onadd() {
         const addButton = this.root.querySelector('.search button');
         addButton.onclick = () => {
             const { value } = this.root.querySelector('.search input');
@@ -71,7 +71,7 @@ export class GoatsView extends Goats {
             row.querySelector('.remove-button').onclick = () => {
                 let isOk = confirm('Tem certeza que deseja deletar esta linha?');
 
-                if(isOk) {
+                if (isOk) {
                     this.delete(item);
                 }
             }

@@ -7,11 +7,13 @@
 :root {
     font-size: 62.5%;
 
-    --ff-primary: 'Poppins', sans-serif;
-    --text-color: #303030;
+    --bg-color: #010409;
+    --btn-primary-color: #29903B;
+    --btn-danger-color: #B62324;
+    --bg-secondary-color: #0D1117;
 
-    --hue: 194;
-    --primary-color: hsl(var(--hue), 100%, 63%);
+    --ff-primary: 'Poppins', sans-serif;
+    --text-color: #ffff;
 }
 
 .sr-only {
@@ -29,7 +31,7 @@
 body {
     font-size: 1.6rem;
     color: var(--text-color);
-    background-color: rgb(250, 254, 255);
+    background-color: var(--bg-color);
 }
 
 body * {
@@ -50,9 +52,24 @@ header {
     margin: 2.5rem 0;
 }
 
-header h1 {
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 32px;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo a h1 {
     font-size: 2rem;
     text-transform: uppercase;
+    color: var(--text-color);
 }
 
 .search {
@@ -61,15 +78,23 @@ header h1 {
 }
 
 .search input {
+    color: var(--text-color);
+    background-color: var(--bg-secondary-color);
     height: 3.2rem;
-    border: 1px solid #ccc;
+    border: 1px solid #ffff;
     border-radius: .4rem 0 0 .4rem;
     padding: 0 .8rem;
 }
 
+.search input:focus {
+    border: none;
+    outline: 1px solid #1745cf;
+}
+
 .search button {
     height: 3.2rem;
-    background-color: var(--primary-color);
+    color: var(--text-color);
+    background-color: var(--btn-primary-color);
     border-radius: 0 .4rem .4rem 0;
     border: none;
     padding: 0 1rem;
@@ -94,7 +119,7 @@ table * {
 }
 
 table th {
-    background-color: var(--primary-color);
+    background-color: var(--bg-secondary-color);
     text-align: left;
     font-weight: normal;
     padding: 1.5rem;
@@ -109,11 +134,11 @@ table th:last-child {
 }
 
 table tr {
-    background-color: #eee;
+    background-color: var(--bg-secondary-color);
 }
 
 table tr:nth-child(odd) {
-    background-color: #ddd;
+    background-color: var(--bg-color);
 }
 
 table td {
@@ -131,6 +156,10 @@ td.user a {
     text-decoration: none;
 }
 
+td.user a:hover {
+    text-decoration: underline;
+}
+
 td.user a p {
     font-weight: bold;
 }
@@ -143,6 +172,32 @@ td.user img {
     border-radius: 50%;
 }
 
+td.repositories, 
+td.followers {
+    text-align: center;
+}
+
 .remove-button {
     cursor: pointer;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: .5rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--btn-danger-color);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+footer p a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
 }
