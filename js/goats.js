@@ -16,7 +16,7 @@ export class Goats {
         this.update();
     }
 }
-// Visualizacao e eventos do HTML
+
 export class GoatsView extends Goats {
     constructor(root) {
         super(root)
